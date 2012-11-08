@@ -410,11 +410,11 @@ class Client extends HttpClient
             'description' => $description,
             'location' => $location,
             'category' => $category,
-            'group_type' => $optional_config['group_type'],
-            'web_address' => $optional_config['web_address'],
-            'status' => $optional_config['status'],
-            'groupmates_enabled' => $optional_config['groupmates_enabled'],
-            'groups_above' => $optional_config['groups_above'],
+            'group_type' => isset($optional_config['group_type'])?$optional_config['group_type']:NULL,
+            'web_address' => isset($optional_config['web_address'])?$optional_config['web_address']:NULL,
+            'status' => isset($optional_config['status'])?$optional_config['status']:NULL,
+            'groupmates_enabled' => isset($optional_config['groupmates_enabled'])?$optional_config['groupmates_enabled']:NULL,
+            'groups_above' => isset($optional_config['groups_above'])?$optional_config['groups_above']:NULL,
         );
 
         return $this->post('groups', array_filter($params));
