@@ -403,18 +403,18 @@ class Client extends HttpClient
      * @return stdClass
      *   User object.
      */
-    public function groupsCreateGroup($title, $description, $location, $category, $optional_config)
+  public function groupsCreateGroup($title, $description, $location, $category, $optional_config)
     {
         $params = array(
             'title' => $title,
             'description' => $description,
             'location' => $location,
             'category' => $category,
-            'group_type' => isset($optional_config['group_type'])?$optional_config['group_type']:NULL,
-            'web_address' => isset($optional_config['web_address'])?$optional_config['web_address']:NULL,
-            'status' => isset($optional_config['status'])?$optional_config['status']:NULL,
-            'groupmates_enabled' => isset($optional_config['groupmates_enabled'])?$optional_config['groupmates_enabled']:NULL,
-            'groups_above' => isset($optional_config['groups_above'])?$optional_config['groups_above']:NULL,
+            'group_type' => isset($optional_config['group_type']) ? $optional_config['group_type']:null,
+            'web_address' => isset($optional_config['web_address']) ? $optional_config['web_address']:null,
+            'status' => isset($optional_config['status']) ? $optional_config['status']:null,
+            'groupmates_enabled' => isset($optional_config['groupmates_enabled']) ? $optional_config['groupmates_enabled']:null,
+            'groups_above' => isset($optional_config['groups_above']) ? $optional_config['groups_above']:null,
         );
 
         return $this->post('groups', array_filter($params));
