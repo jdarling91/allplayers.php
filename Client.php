@@ -403,7 +403,7 @@ class Client extends HttpClient
      * @return stdClass
      *   User object.
      */
-  public function groupsCreateGroup($title, $description, $location, $category, $optional_config)
+    public function groupsCreateGroup($title, $description, $location, $category, $optional_config)
     {
         $params = array(
             'title' => $title,
